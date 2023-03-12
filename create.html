@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <head>
 	<title>Company List</title>
 	<style>
+        
 		table {
 			border-collapse: collapse;
-			width: 100%;
 			margin-bottom: 1em;
+            border-collapse:collapse;
+            width: 80%;
+            margin: 0 auto; 
+            padding: 8px;
 		}
+        
 		th, td {
 			text-align: left;
 			padding: 0.5em;
 			border-bottom: 1px solid #ddd;
+            max-width: 150px;
+            
 		}
 		th {
 			background-color: #f2f2f2;
@@ -39,9 +48,68 @@
 			border-bottom: 1px solid #ddd;
 			margin-right: 0.5em;
 		}
+        @media (max-width: 600px) {
+    tr {
+        display: block;
+        margin-bottom: 1em;
+    }
+    td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        margin-right: 0.5em;
+    }
+    td {
+        display: block;
+        text-align: right;
+        font-size: 13px;
+        border-bottom: none;
+        position: relative;
+        padding-left: 50%;
+    }
+    td:last-child {
+        margin-bottom: 0;
+    }
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50%;
+        padding-right: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
 	</style>
 	<script>
-		// function to create a new company
+
+        // DELETE FUNTIONALITY
+        function deleteCompany(code) {
+			// get the row that was clicked on
+			var row = document.getElementById(code);
+			// remove the row from the table
+			row.parentNode.removeChild(row);
+		}
+        // EDIT FUNCTIONALITY
+        function editCompany(code) {
+			// get the row that was clicked on
+			var row = document.getElementById(code);
+			// get the company name, primary address, and secondary address from the row
+			var companyName = row.cells[1].textContent;
+			var primaryAddress = row.cells[2].textContent;
+			var secondaryAddress = row.cells[3].textContent;
+			// display a prompt to the user to enter new values for the company name, primary address, and secondary address
+			var newCompanyName = prompt("Enter new company name", companyName);
+			var newPrimaryAddress = prompt("Enter new primary address", primaryAddress);
+			var newSecondaryAddress = prompt("Enter new secondary address", secondaryAddress);
+			// update the values in the row with the new values entered by the user
+			row.cells[1].textContent = newCompanyName;
+			row.cells[2].textContent = newPrimaryAddress;
+			row.cells[3].textContent = newSecondaryAddress;
+		}
+		// CREATE FUNCTIONALITY
 		function createCompany() {
 			// get the values entered by the user for the new company
 			var newCode = document.getElementById("newCode").value;
