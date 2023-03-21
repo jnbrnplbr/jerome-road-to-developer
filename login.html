@@ -1,37 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
     <link
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
-  rel="stylesheet" />
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-    <link href="/dist/output.css" rel="stylesheet">
-</head>
-<body>
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+    />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <style>
+      /* Adjust the layout for smaller screens */
+      @media screen and (max-width: 480px) {
+        .container {
+          padding: 16px;
+        }
+        .g-6 {
+          flex-direction: column;
+        }
+        .md:w-8/12 {
+          width: 100%;
+        }
+        .lg:w-6/12 {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <section class="h-screen">
-        <div class="container h-full px-6 py-24">
-          <div
-            class="g-6 flex h-full lg:justify-between">
-            <div class="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
-              <img
-                src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
-                class="w-full"
-                alt="Phone image" />
-            </div>
-            <div class="md:w-8/12 lg:ml-6 lg:w-5/12">
-              <form>
-                
-                <!-- Email input -->
-                <div class="relative mb-6" data-te-input-wrapper-init>
-                  <input
-                    type="text"
-                    class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+      <div class="container h-full px-6 py-24">
+        <div class="g-6 flex h-full lg:justify-between">
+          <div class="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
+            <img
+              src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+              class="w-full"
+              alt="Phone image"
+            />
+          </div>
+          <div class="md:w-8/12 lg:ml-6 lg:w-5/12">
+            <form>
+              <!-- Email input -->
+              <div
+                class="relative mb-6"
+                data-te-input-wrapper-init
+              >
+                <input
+                  type="text"
+                  class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not
+([data-te-input-placeholder-active])]:placeholder:opacity-0"
                     id="exampleFormControlInput3"
                     placeholder="Email address" />
                   <label
